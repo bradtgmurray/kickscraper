@@ -12,7 +12,7 @@ def get_backers_and_dollars(url):
     money_raised_div = soup.find(id='moneyraised')
     headers = money_raised_div.find_all('h5')
     backers = headers[0].div.string
-    dollars = headers[1].div.string
+    dollars = headers[1].div.data.string
     return (backers, dollars)
 
 def print_backers_and_dollars(url):
